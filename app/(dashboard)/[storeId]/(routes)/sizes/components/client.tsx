@@ -9,13 +9,13 @@ import { Heading } from "@/components/ui/heading";
 import { Separator } from "@/components/ui/separator";
 import { ApiList } from "@/components/ui/api-list";
 
-import { columns, SizeColumn } from "./columns";
+import { SizeColumn, columns  } from "./columns"
 
-interface SizesClientProps {
+interface SizeClientProps {
   data: SizeColumn[];
 }
 
-export const SizesClient: React.FC<SizesClientProps> = ({
+export const SizesClient: React.FC<SizeClientProps> = ({
   data
 }) => {
   const params = useParams();
@@ -24,7 +24,7 @@ export const SizesClient: React.FC<SizesClientProps> = ({
   return (
     <>
       <div className="flex items-center justify-between">
-        <Heading title={`Sizes (${data.length})`} description="Manage sizes for your products" />
+        <Heading title={`Sizes (${data.length})`} description="Manage sizes for your store" />
         <Button onClick={() => router.push(`/${params.storeId}/sizes/new`)}>
           <Plus className="mr-2 h-4 w-4" /> Add New
         </Button>
